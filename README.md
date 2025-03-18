@@ -39,7 +39,7 @@ hom_het_model(X_file=X1,  # Genotype matrix, individuals are row names, no colum
 ```
 
 ```r
-################################### Second step #########################################
+#########################################################################################
 ######  2. Fitting models using hom and het components generated in the first step ######
 #########################################################################################
 Model_fit(Gname=genename)
