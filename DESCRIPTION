@@ -9,7 +9,7 @@ Description: To identify more susceptibility genes through TWAS, we implemented 
 License: MIT
 LazyData: TRUE
 Depends: 
-    R (>= 4.3),
+    R (>= 4.0),
     stats
 URL: https://github.com/FeiQin92/OneK1K-TWAS
 RoxygenNote: 7.3.2
