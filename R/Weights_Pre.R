@@ -3,13 +3,13 @@
 #'
 #' @description Combing coefficients from above two steps and prepare for weights file.
 #'
-#' @param G_name Add this prefix to all the saved results files.
+#' @param Gname Add this prefix to all the saved results files.
 #' @param in_dir Direction for files stored from about two steps.
 #' @return This function returns the combined coefficients from above two steps. 
 #
 #' @export
-Weights_pre <- function(G_name, in_dir){
-  load(paste0(in_dir, G_name, "_beta"))
+Weights_pre <- function(Gname, in_dir){
+  load(paste0(in_dir, Gname, "_beta"))
 
   het_betas_snp <- het_tiss_betas
   het_int_snp <- het_tiss_ints
@@ -28,13 +28,13 @@ Weights_pre <- function(G_name, in_dir){
   rm(hom_beta_vals)
   rm(hom_int)
 
-  load(paste0(in_dir, G_name, "_predictors"))
+  load(paste0(in_dir, Gname, "_predictors"))
   Yhats_het_snp <- Yhats_het
   Yhats_hom_snp <- Yhats_hom
   Yhats_tiss_snp <- Yhats_tiss
 
-  load(paste0(in_dir, G_name, "_models_Betas"))
-  load(paste0(in_dir, G_name, "_models_prediction"))
+  load(paste0(in_dir, Gname, "_models_Betas"))
+  load(paste0(in_dir, Gname, "_models_prediction"))
 
   tiss_betas <- tiss_betas
   tiss_int <- tiss_int
@@ -163,6 +163,6 @@ Weights_pre <- function(G_name, in_dir){
   save(tiss_beta_list, tiss_int_list, 
      full_beta_list, full_int_list, 
      full_tiss_beta_list, full_tiss_int_list, 
-     file = paste0(in_dir,G_name,"_models_Betas_snps"))
+     file = paste0(in_dir,Gname,"_models_Betas_snps"))
 
 }

@@ -374,7 +374,7 @@ hom_het_model <- function(X=NULL,
   colnames(hom_expr_mat)[2:ncol(hom_expr_mat)] <- CTnames
   X=X_all
 
-  fwrite(hom_expr_mat, file=paste0(out_dir,gene_name, "_Y_residual"), sep="\t", quote=F)
+  data.table::fwrite(hom_expr_mat, file=paste0(out_dir,gene_name, "_Y_residual"), sep="\t", quote=F)
 
   save(Yhats_het, Yhats_hom, Yhats_tiss, file = paste0(out_dir,gene_name,"_predictors"))
   save(hom_beta_vals, hom_int, tiss_betas, tiss_ints, het_tiss_betas, het_tiss_ints, 

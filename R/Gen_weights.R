@@ -3,16 +3,16 @@
 #'
 #' @description Generating weights files required for FUSION TWAS.
 #'
-#' @param G_name Add this prefix to all the saved results files.
+#' @param Gname Add this prefix to all the saved results files.
 #' @param in_dir Direction for files stored from about two steps.
 #' @param out_dir Direction for output weights files.
 #' @return This function generates weights files required for FUSION TWAS. 
 #
 #' @export
-Weights_gen <- function(G_name, in_dir, out_dir){
+Weights_gen <- function(Gname, in_dir, out_dir){
   
-  load(paste0(in_dir, G_name,"_beta"))
-  load(paste0(in_dir, G_name, "_models_Betas_snps"))
+  load(paste0(in_dir, Gname,"_beta"))
+  load(paste0(in_dir, Gname, "_models_Betas_snps"))
 
   cv.performance <- data.frame(hom=c(1.0, 1.0), tiss=c(1.0, 1.0), full=c(1.0, 1.0), full_tiss=c(1.0, 1.0))
   rownames(cv.performance) <- c("rsq", "pval")
@@ -29,7 +29,7 @@ Weights_gen <- function(G_name, in_dir, out_dir){
   		dir.create(tiss_path, recursive = TRUE)
 	  } 
 
-    #if (file.exists(paste0(out_dir, "/weights/", TissID, "/BC_", G_name, "_wgt.RDat"))) {print(paste0("Skip (file exits) !!!!!")); next}
+    #if (file.exists(paste0(out_dir, "/weights/", TissID, "/BC_", Gname, "_wgt.RDat"))) {print(paste0("Skip (file exits) !!!!!")); next}
     snps$V2 <- paste0(snps$V1, "_", snps$V4)
     wgt.matrix1 <- full_tiss_beta_list[[i]]
     # snp_pos1 <- snp_pos_sub[paste0(wgt.matrix1$chr, "_", wgt.matrix1$pos), ]
@@ -60,6 +60,6 @@ Weights_gen <- function(G_name, in_dir, out_dir){
     colnames(snps) <- paste0("V", 1:6)
     rownames(snps) <- snps$V2
 
-  	save(cv.performance, snps, wgt.matrix, hsq, hsq.pv, file=paste0(out_dir, "/", TissID, "/", G_name, "_wgt.RDat"))
+  	save(cv.performance, snps, wgt.matrix, hsq, hsq.pv, file=paste0(out_dir, "/", TissID, "/", Gname, "_wgt.RDat"))
   }
 }
