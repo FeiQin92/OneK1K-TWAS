@@ -49,12 +49,12 @@ Model_fit(Gname=genename)
 ############################################################################################
 ###### 3. Combing coefficients from above two steps and prepare for weights file   #########
 ############################################################################################
-Weights_pre(G_name=genename, in_dir="results/")
+Weights_pre(Gname=genename, in_dir="results/")
 ```
 
 ```r
 #########################################################################################
 ############# 4. Generating weights files required for FUSION TWAS ######################
 #########################################################################################   
-Weights_gen(G_name=genename, in_dir="results/", out_dir="weights/")
+Weights_gen(Gname=genename, in_dir="results/", out_dir="weights/")
 ```
