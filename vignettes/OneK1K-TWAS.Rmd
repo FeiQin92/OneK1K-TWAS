@@ -6,7 +6,7 @@ output: pdf_document
 ---
 
 ```{r, message=FALSE, warning = FALSE}
-setwd(paste0("C:\\Users\\qinf2\\OneDrive - National Institutes of Health\\Kai Yu\\eQTL\\Manuscript\\Submission\\Package\\OneK1K-TWAS-main\\OneK1K-TWAS-main\\data"))
+setwd(paste0(".../OneK1K-TWAS-main/data"))
 library(data.table)
 
 ############################ Fiting hom and het components for each cell type #############################
@@ -41,11 +41,11 @@ Model_fit(Gname=genename)
 ######################################################################################
 ###### Combing coefficients from above two steps and prepare for weights file   ######
 ######################################################################################    
-Weights_pre(G_name=genename, in_dir="results/")
+Weights_pre(Gname=genename, in_dir="results/")
 
 
 ######################################################################################
 ############# Generating weights files required for FUSION TWAS ######################
 ######################################################################################   
-Weights_gen(G_name=genename, in_dir="results/", out_dir="weights/")
+Weights_gen(Gname=genename, in_dir="results/", out_dir="weights/")
 ```
