@@ -1,4 +1,4 @@
-Package: OneK1K_TWAS
+Package: scTWAS
 Type: Package
 Title: Identification Of Cell Type Specific Susceptibility Genes In Multiple Cancers Using Transcriptome Wide Association Studies
 Version: 1.0.0
@@ -6,14 +6,13 @@ Date: 2025-03-18
 Author: Fei Qin, Jianxin Shi, Kai Yu 
 Maintainer: Fei Qin <fei.qin@nih.gov>
 Description: To identify more susceptibility genes through TWAS, we implemented three distinct elastic net–based approaches to build gene expression prediction models for each cell type.
-License: MIT
+License: MIT License
 LazyData: TRUE
 Depends: 
     R (>= 4.0),
     stats
-URL: https://github.com/FeiQin92/OneK1K_TWAS
+URL: https://github.com/FeiQin92/OneK1K-TWAS
 RoxygenNote: 7.3.2
-VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-GB
 Suggests: 
