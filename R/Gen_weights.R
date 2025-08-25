@@ -62,4 +62,6 @@ Weights_gen <- function(Gname, in_dir, out_dir){
 
   	save(cv.performance, snps, wgt.matrix, hsq, hsq.pv, file=paste0(out_dir, "/", TissID, "/", Gname, "_wgt.RDat"))
   }
+  unlink(paste0(in_dir, "*"))
 }
+
