@@ -251,9 +251,9 @@ hom_het_model <- function(X=NULL,
     if(sum(is.na(hom_beta_vals))>0){
       hom_beta_vals[which(is.na(hom_beta_vals))]<-0
     }
-    if(length(attr(hom_fit, "ind.col"))<dim(explanatory)[2]){
+    if(length(attr2(hom_fit, "ind.col"))<dim(explanatory)[2]){
       new_betas<-rep(0, dim(explanatory)[2])
-      new_betas[attr(hom_fit, "ind.col")] <- hom_beta_vals[1:length(attr(hom_fit, "ind.col"))]
+      new_betas[attr2(hom_fit, "ind.col")] <- hom_beta_vals[1:length(attr2(hom_fit, "ind.col"))]
       hom_beta_vals<-new_betas
     }
 
@@ -305,9 +305,9 @@ hom_het_model <- function(X=NULL,
       if(sum(is.na(tiss_beta_vals))>0){
         tiss_beta_vals[which(is.na(tiss_beta_vals))]<-0
       }
-      if(length(attr(tiss_fit, "ind.col"))<dim(explanatory)[2]){
+      if(length(attr2(tiss_fit, "ind.col"))<dim(explanatory)[2]){
         new_betas<-rep(0, dim(explanatory)[2])
-        new_betas[attr(tiss_fit, "ind.col")] <- tiss_beta_vals[1:length(attr(tiss_fit, "ind.col"))]
+        new_betas[attr2(tiss_fit, "ind.col")] <- tiss_beta_vals[1:length(attr2(tiss_fit, "ind.col"))]
         tiss_beta_vals<-new_betas
       }
 
@@ -339,9 +339,9 @@ hom_het_model <- function(X=NULL,
       if(sum(is.na(het_beta_vals))>0){
         het_beta_vals[which(is.na(het_beta_vals))]<-0
       }
-      if(length(attr(het_fit, "ind.col"))<dim(explanatory)[2]){
+      if(length(attr2(het_fit, "ind.col"))<dim(explanatory)[2]){
         new_betas<-rep(0, dim(explanatory)[2])
-        new_betas[attr(het_fit, "ind.col")] <- het_beta_vals[1:length(attr(het_fit, "ind.col"))]
+        new_betas[attr2(het_fit, "ind.col")] <- het_beta_vals[1:length(attr2(het_fit, "ind.col"))]
         het_beta_vals<-new_betas
       }
 
@@ -385,5 +385,6 @@ hom_het_model <- function(X=NULL,
   message("Done!")
   
 }  
+
 
 
