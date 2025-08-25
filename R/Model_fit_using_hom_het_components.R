@@ -138,9 +138,9 @@ Model_fit <- function(Gname){
     if(sum(is.na(full_tiss_beta_vals1))>0){
       full_tiss_beta_vals1[which(is.na(full_tiss_beta_vals1))]<-0
     }
-    if(length(attr(full_tiss_fit1, "ind.col"))<dim(explanatory1)[2]){
+    if(length(attr2(full_tiss_fit1, "ind.col"))<dim(explanatory1)[2]){
       new_betas<-rep(0, dim(explanatory1)[2])
-      new_betas[attr(full_tiss_fit1, "ind.col")] <- full_tiss_beta_vals1[1:length(attr(full_tiss_fit1, "ind.col"))]
+      new_betas[attr2(full_tiss_fit1, "ind.col")] <- full_tiss_beta_vals1[1:length(attr2(full_tiss_fit1, "ind.col"))]
       full_tiss_beta_vals1<-new_betas
     }
 
@@ -171,3 +171,4 @@ Model_fit <- function(Gname){
   #write.csv(R_abs, file=paste0(out_dir, Gname, "_abs_R_Genes.csv"))
 
 }
+
