@@ -381,10 +381,11 @@ hom_het_model <- function(X=NULL,
        snps, X, 
        file = paste0(out_dir,gene_name,"_beta"))
   
-  system(paste0("rm ", paste0(out_dir, gene_name, "_content_tmp.bk")))
+  #system(paste0("rm ", paste0(out_dir, gene_name, "_content_tmp.bk")))
   message("Done!")
   
 }  
+
 
 
 
