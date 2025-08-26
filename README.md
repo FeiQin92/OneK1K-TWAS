@@ -33,3 +33,12 @@ Download the example data from
 ## 4. Generating prediction models
 More details about how to generate prediction models and conducting TWAS have been provided in 
 *[vignettes]{}*.
+
+
+## 5. Predictions models available for all 14 cell types
+
+To identify more susceptibility genes through TWAS, we implemented three distinct elastic net-based approaches to build gene expression prediction models for each cell type: 1) the traditional 'targetC' model, which predicts expression using data only from the targeted cell type; 2) the 'S+targetC' model, following Thompson et al., which incorporates both shared and cell type-specific expression components for the targeted cell type; and 3) a novel 'S+allC' model proposed by us, which integrates shared and cell type-specific expression components across all cell types to further improve prediction performance in the targeted cell type. *[Prediction models](https://www.dropbox.com/scl/fi/7bou9lku437k47uqcma5t/weights_org.tar?rlkey=4ta9pxzzgxs7te1bqx9k7jbvm&st=ry2v6tnb&dl=1)* for all 14 cell types have been provided according to the the format requirements of *[FUSION](https://github.com/gusevlab/fusion_twas)*.
+
+14 Cell type: "CD4_ET", "NK", "CD4_NC", "CD8_S100B", "CD8_ET", "B_IN", "CD8_NC", "B_Mem", "NK_R", "Mono_NC", "Mono_C", "DC", "Plasma", "CD4_SOX4".\
+
+Models were compared (see table below) based on the number of genes selected in each model if prediction performance R2 > 0.01. Finally, genes with prediction performance R2 > 0.01 in either of these three models were retained for further TWAS analyses (“Pooled” column).\ More details about the prediction accuracy abs_R has been provided in *[Prediction_accuracy_R_data.csv](https://www.dropbox.com/scl/fi/fh0adwhqc7higr26jaan1/Prediction_accuracy_R_data.csv?rlkey=krsxawc05jups57n40ebpmw2y&st=u2ukx6bu&dl=1)*.\
