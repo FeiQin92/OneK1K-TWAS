@@ -32,7 +32,7 @@ Download the example data from
 
 ## 4. Generating prediction models
 More details about how to generate prediction models and conducting TWAS have been provided in 
-*[vignettes]{}*.
+*[vignettes](https://feiqin92.github.io/OneK1K-TWAS/OneK1K-TWAS.html)*.
 
 
 ## 5. Predictions models available for all 14 cell types
