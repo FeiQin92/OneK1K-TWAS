@@ -44,7 +44,7 @@ Weights_gen <- function(Gname, in_dir, out_dir){
   	# wgt.matrix2 <- merge(wgt.matrix1, hom_beta_list[[i]][, c("snpid", "beta")], by="snpid" ,all.x=T)
   	wgt.matrix2 <- merge(wgt.matrix1, full_beta_list[[i]][, c("snpid", "beta")], by="snpid" ,all.x=T)
   	wgt.matrix2 <- merge(wgt.matrix2, tiss_beta_list[[i]][, c("snpid", "beta")], by="snpid" ,all.x=T)
-  	colnames(wgt.matrix2)[c(2, 5:6)] <- c("full_tiss","full", "tiss")
+  	colnames(wgt.matrix2)[c(2, 5:6)] <- c("S_allC","S_targetC", "targetC")
     rownames(wgt.matrix2) <- wgt.matrix2$snpid
   	wgt.matrix <- as.matrix(wgt.matrix2[, c(6,5,2)])
   	wgt.matrix[is.na(wgt.matrix)] <- 0
@@ -64,4 +64,5 @@ Weights_gen <- function(Gname, in_dir, out_dir){
   }
   unlink(paste0(in_dir, "*"))
 }
+
 
