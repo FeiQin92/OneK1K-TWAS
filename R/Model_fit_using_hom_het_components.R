@@ -117,7 +117,7 @@ Model_fit <- function(Gname){
     Yhat_all_whole <- Yhat_all_whole[is.na(apply(Yhat_all_whole[,-1], 1, mean))==F,-1]
     
     explanatory1=bigstatsr::as_FBM(Yhat_all_whole[,-1], backingfile=paste0(out_dir, Gname, "_", i,"_content1_tmp"))
-    print(paste0("Number of common noNA individuals: ", sum(is.na(apply(Yhat_all_whole, 1, mean))==F)))
+    #print(paste0("Number of common noNA individuals: ", sum(is.na(apply(Yhat_all_whole, 1, mean))==F)))
     
     set.seed(i)
     full_tiss_fit1<-bigstatsr::big_spLinReg(X = explanatory1, 
@@ -171,5 +171,6 @@ Model_fit <- function(Gname){
   #write.csv(R_abs, file=paste0(out_dir, Gname, "_abs_R_Genes.csv"))
 
 }
+
 
 
