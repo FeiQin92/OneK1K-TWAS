@@ -10,7 +10,8 @@ License: MIT License
 LazyData: TRUE
 Depends: 
     R (>= 4.0),
-    stats
+    stats,
+    bigstatsr
 URL: https://github.com/FeiQin92/OneK1K-TWAS
 RoxygenNote: 7.3.2
 Encoding: UTF-8
